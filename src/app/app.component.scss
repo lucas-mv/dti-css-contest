@@ -1,0 +1,88 @@
+.frame {
+    display: grid;
+    height: 400px;
+    width: 600px;
+    grid-template-columns: repeat(1fr, 12);
+    grid-template-rows: repeat(1fr, 12);
+}
+
+.road-animation{
+    background: linear-gradient(183deg, #4e4f4b, #151513);
+    background-size: 400% 400%;
+    -webkit-animation: RoadAnimation 5s ease infinite;
+    -moz-animation: RoadAnimation 5s ease infinite;
+    -o-animation: RoadAnimation 5s ease infinite;
+    animation: RoadAnimation 5s ease infinite;
+}
+
+.road-left{
+    grid-row: 7 /span 6;
+    grid-column: 5 /span 2;
+    transform: skewX(-27deg);
+}
+
+.road-center{
+    grid-row: 7 /span 6;
+    grid-column: 6 /span 2;
+}
+
+.road-right{
+    grid-row: 7 /span 6;
+    grid-column: 7 /span 2;
+    transform: skewX(27deg);
+}
+
+@-webkit-keyframes RoadAnimation {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes RoadAnimation {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@-o-keyframes RoadAnimation {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes RoadAnimation { 
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+
+.ground{
+    grid-row: 7 /span 6;
+    grid-column: 1 /span 12;
+
+    background: linear-gradient(252deg, #e6a644, #e18339, #8c3313);
+    background-size: 600% 600%;
+
+    -webkit-animation: GroundAnimation 1s ease infinite;
+    -moz-animation: GroundAnimation 1s ease infinite;
+    -o-animation: GroundAnimation 1s ease infinite;
+    animation: GroundAnimation 1s ease infinite;
+
+    @-webkit-keyframes GroundAnimation {
+        0%{background-position:36% 0%}
+        50%{background-position:65% 100%}
+        100%{background-position:36% 0%}
+    }
+    @-moz-keyframes GroundAnimation {
+        0%{background-position:36% 0%}
+        50%{background-position:65% 100%}
+        100%{background-position:36% 0%}
+    }
+    @-o-keyframes GroundAnimation {
+        0%{background-position:36% 0%}
+        50%{background-position:65% 100%}
+        100%{background-position:36% 0%}
+    }
+    @keyframes GroundAnimation { 
+        0%{background-position:36% 0%}
+        50%{background-position:65% 100%}
+        100%{background-position:36% 0%}
+    }
+}
