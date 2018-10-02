@@ -9,48 +9,25 @@
 .road-animation{
     background: linear-gradient(183deg, #4e4f4b, #151513);
     background-size: 400% 400%;
-    -webkit-animation: RoadAnimation 5s ease infinite;
-    -moz-animation: RoadAnimation 5s ease infinite;
-    -o-animation: RoadAnimation 5s ease infinite;
     animation: RoadAnimation 5s ease infinite;
 }
 
 .road-left{
     grid-row: 7 /span 6;
     grid-column: 5 /span 2;
-    transform: skewX(-27deg);
+    transform: skewX(-22deg);
 }
 
 .road-center{
     grid-row: 7 /span 6;
     grid-column: 6 /span 2;
+    z-index: 1;
 }
 
 .road-right{
     grid-row: 7 /span 6;
     grid-column: 7 /span 2;
-    transform: skewX(27deg);
-}
-
-@-webkit-keyframes RoadAnimation {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@-moz-keyframes RoadAnimation {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@-o-keyframes RoadAnimation {
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
-}
-@keyframes RoadAnimation { 
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
+    transform: skewX(22deg);
 }
 
 .ground{
@@ -59,30 +36,69 @@
 
     background: linear-gradient(252deg, #e6a644, #e18339, #8c3313);
     background-size: 600% 600%;
-
-    -webkit-animation: GroundAnimation 1s ease infinite;
-    -moz-animation: GroundAnimation 1s ease infinite;
-    -o-animation: GroundAnimation 1s ease infinite;
     animation: GroundAnimation 1s ease infinite;
 
-    @-webkit-keyframes GroundAnimation {
-        0%{background-position:36% 0%}
-        50%{background-position:65% 100%}
-        100%{background-position:36% 0%}
+    display: flex;
+
+    .car{
+        margin: auto;
+        z-index: 10;
+        font-size: 39px;
     }
-    @-moz-keyframes GroundAnimation {
-        0%{background-position:36% 0%}
-        50%{background-position:65% 100%}
-        100%{background-position:36% 0%}
+
+    .car-x{
+        animation: XCarAnimation 3s ease infinite;
     }
-    @-o-keyframes GroundAnimation {
-        0%{background-position:36% 0%}
-        50%{background-position:65% 100%}
-        100%{background-position:36% 0%}
+
+    .car-y{
+        animation: YCarAnimation 7s ease infinite;
     }
-    @keyframes GroundAnimation { 
-        0%{background-position:36% 0%}
-        50%{background-position:65% 100%}
-        100%{background-position:36% 0%}
+}
+
+.sky{
+    grid-row: 1 /span 6;
+    grid-column: 1 /span 12;
+    display: flex;
+
+    .sun{
+        margin: auto auto -12px auto;
+        font-size: 54px;
+        animation: SunAnimation 10s ease infinite;
     }
+}
+
+@keyframes GroundAnimation { 
+    0%{background-position:36% 0%}
+    50%{background-position:65% 100%}
+    100%{background-position:36% 0%}
+}
+
+@keyframes RoadAnimation { 
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+
+@keyframes XCarAnimation { 
+    0%{transform: translateX(0px)}
+    25%{transform: translateX(-10px)}
+    50%{transform: translateX(0px)}
+    75%{transform: translateX(16px)}
+    100%{transform: translateX(0px)}
+}
+
+@keyframes YCarAnimation { 
+    0%{transform: translateY(0px)}
+    25%{transform: translateY(-15px)}
+    50%{transform: translateY(0px)}
+    75%{transform: translateY(23px)}
+    100%{transform: translateY(0px)}
+}
+
+@keyframes SunAnimation { 
+    0%{transform: rotate(0deg)}
+    25%{transform: rotate(-50deg)}
+    50%{transform: rotate(0deg)}
+    75%{transform: rotate(50deg)}
+    100%{transform: rotate(0deg)}
 }
