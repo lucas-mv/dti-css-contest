@@ -50,6 +50,20 @@ body{
     animation: RoadRightAnimation 2s ease infinite;
 }
 
+.sky-overlay{
+    grid-column: 1 /span 12;
+    grid-row: 1 /span 5;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.07));
+    z-index: 1000;
+}
+
+.ground-overlay{
+    grid-column: 1 /span 12;
+    grid-row: 6 /span 7;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    z-index: 1000;
+}
+
 .ground{
     grid-row: 6 /span 7;
     grid-column: 1 /span 12;
@@ -105,6 +119,12 @@ body{
         animation: LizardAnimation 27s ease-in infinite;
         animation-delay: 2s;
     }
+}
+
+.horizon{
+    grid-row: 6 /span 1;
+    grid-column: 1 /span 12;
+    animation: HorizonAnimation 3s ease-in-out infinite;
 }
 
 .sky{
@@ -341,4 +361,10 @@ body{
     0%{border-left: 5px rgba(133, 120, 104, 0.9);}
     50%{border-left: 2px rgba(160, 131, 80, 0.9);}
     100%{border-left: 5px rgba(133, 120, 104, 0.9);}
+}
+
+@keyframes HorizonAnimation{
+    0%{border-top: solid 0.5px rgba(223,167,152, 0.9);}
+    50%{border-top: solid 0.5px rgba(175,145,119, 0.9);}
+    100%{border-top: solid 0.5px rgba(247,203,178, 0.9);}
 }
