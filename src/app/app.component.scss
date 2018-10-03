@@ -1,3 +1,7 @@
+body{
+    margin: 0 !important;
+}
+
 .frame {
     display: grid;
     height: 400px;
@@ -6,64 +10,186 @@
     grid-template-rows: repeat(1fr, 12);
 }
 
-.road-animation{
+.road{
     background: linear-gradient(183deg, #4e4f4b, #151513);
-    background-size: 400% 400%;
-    animation: RoadAnimation 5s ease infinite;
+    background-size: 175% 175%;
 }
 
 .road-left{
-    grid-row: 7 /span 6;
+    grid-row: 6 /span 7;
     grid-column: 5 /span 2;
     transform: skewX(-22deg);
+    animation: RoadLeftAnimation 2s ease infinite;
 }
 
 .road-center{
-    grid-row: 7 /span 6;
+    grid-row: 6 /span 7;
     grid-column: 6 /span 2;
     z-index: 1;
+    animation: RoadCenterAnimation 2s ease infinite;
 }
 
 .road-right{
-    grid-row: 7 /span 6;
+    grid-row: 6 /span 7;
     grid-column: 7 /span 2;
     transform: skewX(22deg);
+    animation: RoadRightAnimation 2s ease infinite;
 }
 
 .ground{
-    grid-row: 7 /span 6;
+    grid-row: 6 /span 7;
     grid-column: 1 /span 12;
 
     background: linear-gradient(252deg, #e6a644, #e18339, #8c3313);
     background-size: 600% 600%;
     animation: GroundAnimation 1s ease infinite;
 
-    display: flex;
+    display: block;
 
     .car{
-        margin: auto;
         z-index: 10;
         font-size: 39px;
+        position: absolute;
+        top: 239px;
+        left: 273px;
     }
 
     .car-x{
-        animation: XCarAnimation 3s ease infinite;
+        animation: XCarAnimation 3s ease-in-out infinite;
     }
 
     .car-y{
-        animation: YCarAnimation 7s ease infinite;
+        animation: YCarAnimation 7s ease-in-out infinite;
+    }
+
+    .cactus-1{
+        z-index: 10;
+        position: absolute;
+        animation: Cactus1Animation 10s ease-in infinite;
+    }
+
+    .palm{
+        z-index: -10;
+        position: absolute;
+        animation: PalmAnimation 23s ease-in infinite;
+    }
+
+    .cactus-2{
+        z-index: 10;
+        position: absolute;
+        visibility:hidden;
+        animation-delay: 1.5s;
+        animation: Cactus2Animation 11.1s ease-in infinite;
+    }
+
+    .lizard{
+        z-index: 10;
+        visibility:hidden;
+        position: absolute;
+        animation: LizardAnimation 27s ease-in infinite;
+        animation-delay: 2s;
     }
 }
 
 .sky{
     grid-row: 1 /span 6;
     grid-column: 1 /span 12;
-    display: flex;
+    display: block;
+    z-index: -10;
+    background: linear-gradient(270deg, #69d2e7, #a7dbdb, #e0e4cc, #f38630, #fa6900);
+    background-size: 1000% 1000%;
+    animation: SkyAnimation 30s ease infinite;
+    
+    .mountain-1{
+        z-index: -5;
+        position: absolute;
+        font-size: 93px;
+        top: 57px;
+        left: 484px;
+        animation: MountainAnimation 1s ease-in infinite;
+    }
+
+    .mountain-2{
+        z-index: -5;
+        position: absolute;
+        font-size: 59px;
+        top: 100px;
+        left: 453px;
+        animation-delay: 0.5s;
+        animation: MountainAnimation 0.9s ease-in infinite;
+    }
+
+    .fuji{
+        z-index: -5;
+        position: absolute;
+        font-size: 100px;
+        top: 45px;
+        left: 52px;
+        animation: MountainAnimation 2s ease-out infinite;
+    }
+
+    .snow-mountain-1{
+        z-index: -5;
+        position: absolute;
+        font-size: 77px;
+        top: 83px;
+        left: -5px;
+        animation: MountainAnimation 1.8s ease-out infinite;
+    }
 
     .sun{
         margin: auto auto -12px auto;
-        font-size: 54px;
-        animation: SunAnimation 10s ease infinite;
+        font-size: 136px;
+        animation: SunAnimation 10s ease-in-out infinite;
+        position: absolute;
+        left: 207px;
+        top: 32px;
+        z-index: -1;
+    }
+
+    .cloud-1{
+        z-index: 10;
+        position: absolute;
+        font-size: 22px;
+        top:70px;
+        animation: Cloud1XAnimation 11s linear infinite;
+    }
+    
+    .cloud-1-y{
+        animation: Cloud1YAnimation 2.8s ease-in-out infinite;
+    }
+
+    .cloud-2{
+        z-index: 10;
+        position: absolute;
+        font-size: 30px;
+        top:32px;
+        animation: Cloud2XAnimation 14s linear infinite;
+    }
+    
+    .cloud-2-y{
+        animation: Cloud2YAnimation 2.8s ease-in-out infinite;
+    }
+
+    .cloud-3{
+        z-index: 10;
+        position: absolute;
+        font-size: 50px;
+        top:26px;
+        animation: Cloud3XAnimation 17s linear infinite;
+    }
+    
+    .cloud-3-y{
+        animation: Cloud3YAnimation 3.4s ease-in-out infinite;
+    }
+
+    .dolphin{
+        z-index: 10;
+        left: 284px;
+        top: 165px;
+        position: absolute;
+        animation: DolphinAnimation  10s ease-in-out infinite;
+        animation-delay: 10s;
     }
 }
 
@@ -71,12 +197,6 @@
     0%{background-position:36% 0%}
     50%{background-position:65% 100%}
     100%{background-position:36% 0%}
-}
-
-@keyframes RoadAnimation { 
-    0%{background-position:50% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:50% 0%}
 }
 
 @keyframes XCarAnimation { 
@@ -101,4 +221,106 @@
     50%{transform: rotate(0deg)}
     75%{transform: rotate(50deg)}
     100%{transform: rotate(0deg)}
+}
+
+@keyframes SkyAnimation { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes PalmAnimation{
+    0%{z-index: -11;top: 149px; left: 128px;}
+    49%{z-index: -11;}
+    50%{z-index: 10;font-size: 22px; top: 149px; left: 128px;}
+    100%{z-index: 10;font-size: 40px; top: 348px; left: 23px;}
+}
+
+@keyframes Cactus1Animation{
+    0%{font-size: 16px; top: 149px; left: 108px;}
+    100%{font-size: 32px; top: 358px; left: 3px;}
+}
+
+@keyframes Cactus2Animation{
+    0%{visibility:visible;font-size: 12px; top: 160px; left: 408px;}
+    100%{font-size: 36px; top: 340px; left: 560px;}
+}
+
+@keyframes LizardAnimation{
+    0%{visibility:visible; font-size: 10px; top: 155px; left: 350px;}
+    50%{visibility:visible;font-size: 32px; top: 360px; left: 425px;}
+    51%{visibility:hidden}
+    100%{visibility:hidden}
+}
+
+@keyframes Cloud1XAnimation{
+    0%{left: 0;}
+    100%{left: 574px;}
+}
+
+@keyframes Cloud1YAnimation{
+    0%{transform: translateY(-2px)}
+    25%{transform: translateY(5px)}
+    50%{transform: translateY(8px)}
+    75%{transform: translateY(3px)}
+    100%{transform: translateY(-2px)}
+}
+
+
+@keyframes Cloud2XAnimation{
+    0%{left: 50px;}
+    100%{left: 550px;}
+}
+
+@keyframes Cloud2YAnimation{
+    0%{transform: translateY(-7px)}
+    25%{transform: translateY(6px)}
+    50%{transform: translateY(10px)}
+    75%{transform: translateY(5px)}
+    100%{transform: translateY(-7px)}
+}
+
+@keyframes Cloud3XAnimation{
+    0%{left: 0px;}
+    100%{left: 540px;}
+}
+
+@keyframes Cloud3YAnimation{
+    0%{transform: translateY(-6px)}
+    25%{transform: translateY(6px)}
+    50%{transform: translateY(9px)}
+    75%{transform: translateY(2px)}
+    100%{transform: translateY(-6px)}
+}
+
+@keyframes DolphinAnimation{
+    0%{top: 165px;}
+    15%{top: 110px;}
+    20%{transform: rotateY(180deg)}
+    30%{transform: rotateY(-180deg)}
+    35%{top: 165px;}
+}
+
+@keyframes MountainAnimation{
+    0%{transform: translateY(0px)}
+    50%{transform: translateY(2px)}
+    100%{transform: translateY(0px)}
+}
+
+@keyframes RoadRightAnimation{
+    0%{border-right: solid 5px rgba(133, 120, 104, 0.9);}
+    50%{border-right: solid 2px rgba(160, 131, 80, 0.9);}
+    100%{border-right: solid 5px rgba(133, 120, 104, 0.9);}
+}
+
+@keyframes RoadLeftAnimation{
+    0%{border-left: solid 5px rgba(133, 120, 104, 0.9);}
+    50%{border-left: solid 2px rgba(160, 131, 80, 0.9);}
+    100%{border-left: solid 5px rgba(133, 120, 104, 0.9);}
+}
+
+@keyframes RoadCenterAnimation{
+    0%{border-left: 5px rgba(133, 120, 104, 0.9);}
+    50%{border-left: 2px rgba(160, 131, 80, 0.9);}
+    100%{border-left: 5px rgba(133, 120, 104, 0.9);}
 }
