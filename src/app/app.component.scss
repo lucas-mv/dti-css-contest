@@ -144,7 +144,7 @@ body{
         font-size: 93px;
         top: 69px;
         left: 484px;
-        animation: MountainAnimation 1s ease-in infinite;
+        animation: MountainAnimation 2.05s ease-in infinite;
     }
 
     .mountain-2{
@@ -154,10 +154,29 @@ body{
         top: 103px;
         left: 453px;
         animation-delay: 0.5s;
-        animation: MountainAnimation 0.9s ease-in infinite;
+        animation: MountainAnimation 1.85s ease-in infinite;
     }
 
-    .fuji{
+    .mountain-3{
+        z-index: -6;
+        position: absolute;
+        font-size: 116px;
+        top: 43px;
+        left: 453px;
+        animation-delay: 0.5s;
+        animation: MountainAnimation 1.76s ease-in infinite;
+    }
+
+    .mountain-4{
+        z-index: -4;
+        position: absolute;
+        font-size: 57px;
+        top: 108px;
+        left: 135px;
+        animation: MountainAnimation 1.9s ease-out infinite;
+    }
+
+    .mountain-5{
         z-index: -5;
         position: absolute;
         font-size: 100px;
@@ -166,7 +185,7 @@ body{
         animation: MountainAnimation 2s ease-out infinite;
     }
 
-    .snow-mountain-1{
+    .mountain-6{
         z-index: -5;
         position: absolute;
         font-size: 77px;
@@ -175,12 +194,22 @@ body{
         animation: MountainAnimation 1.8s ease-out infinite;
     }
 
+    .mountain-7{
+        z-index: -5;
+        position: absolute;
+        font-size: 41px;
+        top: 124px;
+        left: 424px;
+        animation-delay: 0.5s;
+        animation: MountainAnimation 1.76s ease-in infinite;
+    }
+
     .sun{
         margin: auto auto -12px auto;
         font-size: 136px;
         animation: SunAnimation 10s ease-in-out infinite;
         position: absolute;
-        left: 207px;
+        left: 208px;
         top: 32px;
         z-index: -1;
     }
